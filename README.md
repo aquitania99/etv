@@ -1,6 +1,13 @@
 # test-full-stack
 Test for full stack developers.
-This is a simple (in functionality) login page with featues to register a new user and update the details. It has a Illuminate\Database as a dependency; however, in itself is framework agnostic. It implements a very basic "template" approach to avoid yet another dependency to this project.
+
+This is a simple (in functionality) login page with features to register a new user and update the details. It has a Illuminate\Database as a dependency; however, in itself is framework agnostic. It implements a very basic "template" approach to avoid yet another dependency to this project.
+
+When you start, please create your own public repo and on github or bitbucket and do an initial commit before your start your work.
+
+We want to see commits as you go, we will be rating your commit comments and the the chunks of what you commit with what you are trying to achieve.
+
+Please send the link to your repo back to us alex@pbwebdev.com.au and CC mail@pbwebdev.com.au
 
 ## Project Structure
 
