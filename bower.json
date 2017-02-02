@@ -1,0 +1,23 @@
+{
+  "name": "test-full-stack",
+  "homepage": "https://github.com",
+  "authors": [
+    "Alex Corzo <alexcorzo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "glyphicons-only-bootstrap": "^0.0.1",
+    "jquery": "^3.1.1"
+  }
+}
