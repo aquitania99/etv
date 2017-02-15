@@ -1,1 +1,1 @@
-Page not found
+<h1>Sorry!! Something went terribly wrong! =( Page not found</h1>

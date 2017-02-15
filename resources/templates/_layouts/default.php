@@ -6,7 +6,9 @@
     </head>
 
     <body>
-        #!content!#
-        <script type="text/javascript" src="#!base_path!#assets/scripts/frontend.js"></script>
+        <div class="container">
+            #!content!#
+            <script type="text/javascript" src="#!base_path!#assets/scripts/frontend.js"></script>
+        </div>
     </body>
 </html>

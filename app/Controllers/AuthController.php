@@ -5,6 +5,7 @@ namespace Acme\FsTest\Controllers;
 use Acme\FsTest\Data;
 use Acme\FsTest\Models;
 use Acme\FsTest\Views;
+use Acme\FsTest\Helpers\PasswordHandler;
 
 class AuthController extends BaseController
 {
@@ -22,8 +23,7 @@ class AuthController extends BaseController
         {
             $user = new Data\User;
             $user->email = $_POST['email'];
-            $user->password = hash_hmac('sha256', $_POST['password'], $this->passwordSalt);
-
+            $user->password = $_POST['password'];
             $model = new Models\User;
             $loadedDbUser = $model->login($user);
 
@@ -31,12 +31,17 @@ class AuthController extends BaseController
             {
                 $_SESSION['logged'] = hash_hmac('sha256', $loadedDbUser['id'], $this->sessionSalt);
                 $_SESSION['userId'] = $loadedDbUser['id'];
+                $_SESSION['firstName'] = $loadedDbUser['firstName'];
+                $_SESSION['lastName'] = $loadedDbUser['lastName'];
+                $_SESSION['email'] = $loadedDbUser['email'];
+                $_SESSION['password'] = $loadedDbUser['password'];
+
                 $this->redirect('welcome');
             }
             else
             {
                 $_SESSION['message'] = 'email/password are incorrect';
-                $_SESSION['messageType'] = 'ERROR';
+                $_SESSION['messageType'] = 'danger';
             }
         }
 
@@ -52,6 +57,7 @@ class AuthController extends BaseController
 
     public function logout()
     {
-        //TODO: implement please
+        session_destroy();
+        header('Location: login');
     }
 }
