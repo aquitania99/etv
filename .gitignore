@@ -3,3 +3,5 @@
 /bower_components
 /public/assets
 /nbproject/private/
+/nbproject
+/.idea

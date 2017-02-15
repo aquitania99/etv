@@ -79,7 +79,17 @@ class UserController extends BaseController
 
             $model = new Models\User;
 
-            $model->add($user);
+            $registered = $model->add($user);
+
+            // Set Session Variable for newly registered user
+            $_SESSION['userId'] = $registered['id'];
+            $_SESSION['firstName'] = $registered[0]->firstName;
+            $_SESSION['lastName'] = $registered[0]->lastName;
+            $_SESSION['email'] = $registered[0]->email;
+            $_SESSION['password'] = $registered[0]->password;
+            $_SESSION['logged'] = hash_hmac('sha256', $registered['id'], $this->sessionSalt);
+            $view = new Views\User\Welcome();
+            return $view->render();
         }
         else {
             $view = new Views\User\Register;

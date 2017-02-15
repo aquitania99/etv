@@ -49,7 +49,10 @@ class User
 
         $after = DB::table('users')->max('id');
         if( $after > $before ){
-            return true;
+            return [
+                'id' => $after,
+                $user
+            ];
         }
         else return 'Couldn\'t add the User data';
     }
